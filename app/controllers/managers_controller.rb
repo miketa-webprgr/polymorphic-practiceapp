@@ -33,9 +33,9 @@ class ManagersController < ApplicationController
   # PATCH/PUT /managers/1
   def update
     if @manager.update(manager_params)
-      format.html { redirect_to @manager, notice: 'Manager was successfully updated.' }
+      redirect_to @manager, notice: 'Manager was successfully updated.'
     else
-      format.html { render :edit }
+      render :edit
     end
   end
 
