@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @manager.name %>
+</p>
+
+<p>
+  <strong>Team:</strong>
+  <%= @manager.team %>
+</p>
+
+<% @manager.types.each.with_index(1) do | type, index | %>
+  <p>
+  <strong>Type<%= index %>:</strong>
+  <%= type.tag %>
+  </p>
+<% end %>
+
+<%= link_to 'Edit', edit_manager_path(@manager) %> |
+<%= link_to 'Back', managers_path %>
