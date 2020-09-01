@@ -1,0 +1,13 @@
+<h1>Editing Tag</h1>
+
+<p>
+  <strong>Tagged to:</strong>
+  <%= @tag.taggable.name %>
+</p>
+
+<p>
+  <%= render 'form', tag: @tag %>
+</p>
+
+<%= link_to 'Destroy', @tag, method: :delete, data: { confirm: 'Are you sure?' } %> |
+<%= link_to 'Back', polymorphic_path(@tag.taggable) %>

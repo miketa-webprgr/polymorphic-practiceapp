@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%=@list%> Tags</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tagged to</th>
+      <th>Body</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tags.each do |tag| %>
+      <tr>
+        <td><%= link_to tag.taggable.name, tag.taggable %></td>
+        <td><%= tag.body %></td>
+        <td><%= link_to 'Edit', edit_tag_path(tag) %></td>
+        <td><%= link_to 'Destroy', tag, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<% if @list == "Manager" %>
+  <%= link_to 'Managers List', managers_path %>
+<% elsif @list == "Player" %>
+  <%= link_to 'Players List', players_path %>
+<% else %>
+  <%= link_to 'Managers List', managers_path %><br>
+  <%= link_to 'Players List', players_path %>
+<% end %>

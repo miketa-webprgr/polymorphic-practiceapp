@@ -27,13 +27,13 @@ ActiveRecord::Schema.define(version: 2020_08_28_082937) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "types", force: :cascade do |t|
+  create_table "tags", force: :cascade do |t|
     t.string "taggable_type", null: false
     t.integer "taggable_id", null: false
-    t.string "tag"
+    t.string "body"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["taggable_type", "taggable_id"], name: "index_types_on_taggable_type_and_taggable_id"
+    t.index ["taggable_type", "taggable_id"], name: "index_tags_on_taggable_type_and_taggable_id"
   end
 
 end

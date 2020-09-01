@@ -1,0 +1,33 @@
+<%= form_with(model: tag, local: true) do |form| %>
+  <% if tag.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tag.errors.count, "error") %> prohibited this tag from being saved:</h2>
+
+      <ul>
+        <% tag.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <strong>
+    <div class="field">
+      <%= form.label :body %>
+      <%= form.text_field :body %>
+    </div>
+  </strong>
+
+  <%# taggables/show.html.erb → tag#createアクションの場合、taggable変数も利用する %>
+  <%# tags/edit.html.erb → tag#updateアクションの場合、taggable変数は利用しない %>
+  <%# defined?メソッドを使って、createアクションの場合のみに隠しパラメータを送付する %>
+  <% if defined? taggable %>
+    <%= form.hidden_field :taggable_id, value: taggable.id %>
+    <%= form.hidden_field :taggable_type, value: taggable.class %>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+

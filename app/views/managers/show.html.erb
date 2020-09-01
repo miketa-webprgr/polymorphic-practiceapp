@@ -10,12 +10,18 @@
   <%= @manager.team %>
 </p>
 
-<% @manager.types.each.with_index(1) do | type, index | %>
+<% @manager.tags.each.with_index(1) do | tag, index | %>
   <p>
-  <strong>Type<%= index %>:</strong>
-  <%= type.tag %>
+    <% if tag.id.present? %>
+      <strong>Tag <%= index %>:</strong>
+      <%= link_to tag.body, edit_tag_path(tag) %>
+    <% end %>
   </p>
 <% end %>
+
+<p>
+  <%= render 'tags/form', taggable: @manager, tag: @tag %>
+</p>
 
 <%= link_to 'Edit', edit_manager_path(@manager) %> |
 <%= link_to 'Back', managers_path %>

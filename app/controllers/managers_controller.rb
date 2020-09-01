@@ -8,6 +8,7 @@ class ManagersController < ApplicationController
 
   # GET /managers/1
   def show
+    @tag = @manager.tags.build
   end
 
   # GET /managers/new

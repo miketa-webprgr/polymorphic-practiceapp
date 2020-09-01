@@ -8,6 +8,7 @@ class PlayersController < ApplicationController
 
   # GET /players/1
   def show
+    @tag = @player.tags.build
   end
 
   # GET /players/new
@@ -46,6 +47,7 @@ class PlayersController < ApplicationController
   end
 
   private
+
     # Use callbacks to share common setup or constraints between actions.
     def set_player
       @player = Player.find(params[:id])
@@ -55,4 +57,5 @@ class PlayersController < ApplicationController
     def player_params
       params.require(:player).permit(:name, :team, :position)
     end
+
 end

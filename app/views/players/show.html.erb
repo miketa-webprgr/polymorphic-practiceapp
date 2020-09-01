@@ -15,13 +15,18 @@
   <%= @player.position %>
 </p>
 
-<% @player.types.each.with_index(1) do | type, index | %>
+<% @player.tags.each.with_index(1) do | tag, index | %>
   <p>
-  <strong>Type<%= index %>:</strong>
-  <%= type.tag %>
+    <% if tag.id.present? %>
+      <strong>Tag <%= index %>:</strong>
+      <%= link_to tag.body, edit_tag_path(tag) %>
+    <% end %>
   </p>
 <% end %>
 
+<p>
+  <%= render 'tags/form', taggable: @player, tag: @tag %>
+</p>
 
 <%= link_to 'Edit', edit_player_path(@player) %> |
 <%= link_to 'Back', players_path %>

@@ -1,3 +1,3 @@
 class Manager < ApplicationRecord
-  has_many :types, as: :taggable
+  include Taggable
 end
