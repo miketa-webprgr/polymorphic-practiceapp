@@ -1,24 +1,33 @@
-# README
+# ポリモーフィック関連を使って、アプリを作る練習をしてみた
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+タイトルのとおり。  
+ポリモーフィックの練習なので、バリデーションとか、NULL制約とかは何もつけてません。  
 
-Things you may want to cover:
+## 経緯
 
-* Ruby version
+ポリモーフィックの勉強をしていたら、Tag付けできるアプリ作ってみたらと言われたのでやってみた。  
+軽いノリで始めたが、すごく大変だった。createアクションで苦労した。  
 
-* System dependencies
+## ノートなど
 
-* Configuration
+まず、メンターさんに質問をしてみた。
+- [質問リスト](https://github.com/miketa-webprgr/TIL/blob/6d3f60d13f494b89365df858ef477c984281555d/99_etc/20200828_dyson_questions.md)
 
-* Database creation
+次に、練習アプリに取り組みだしたのだが、createアクションの方法論で悩んだので、考えたことを自分なりに整理した。
+- [【自分用メモ】ポリモーフィックな関連付けをして、フォームを作成する場合の方法論 \- Qiita](https://qiita.com/miketa_webprgr/items/f9d536f8265ca52b5092)
 
-* Database initialization
+仲間内でこのメモを見せたところ、興味をもってくれている風だったので、勝手に勉強会を開催することに成功した。  
+３人も聴いてくれることになった。話ができるようにノートを作っていたら、長くなった。  
+- [勉強会用の資料](https://github.com/miketa-webprgr/TIL/blob/master/99_etc/20200902_polymorphoric_explanation.md)
 
-* How to run the test suite
+## 結論
 
-* Services (job queues, cache servers, search engines, etc.)
+ポリモーフィック関連付けをして、createアクションを書く場合、コントローラを分けましょう。  
 
-* Deployment instructions
+- [Comments With Polymorphic Associations \(Example\) \| GoRails](https://gorails.com/episodes/comments-with-polymorphic-associations?autoplay=1)
+- [GitHub: gorails\-episode\-36/app/controllers at master · gorails\-screencasts/gorails\-episode\-36](https://github.com/gorails-screencasts/gorails-episode-36/tree/master/app/controllers)
 
-* ...
+## 今後の課題
+
+ポリモーフィック関連付けをしたテーブルを中間テーブルにするということがやってみたい。  
+- [polymophicなテーブルを経由して、has\_many thourghする。 \| So Far, So Tech](https://ver-1-0.net/2018/02/14/post-1918)
