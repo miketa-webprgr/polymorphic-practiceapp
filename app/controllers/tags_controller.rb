@@ -5,8 +5,11 @@ class TagsController < ApplicationController
   # GET /tags
   def index
     @list = list_param&.capitalize
+    # クエリパラメータがmanagerの場合、managerに紐づくTagを表示する(managerという独自メソッドをscopeで定義)
     if list_param == "manager"; @tags = Tag.managers
+    # クエリパラメータがplayerの場合、playerに紐づくTagを表示する(playerという独自メソッドをscopeで定義)
     elsif list_param == "player"; @tags = Tag.players
+    # クエリパラメータがそれ以外の場合、全てのTagを表示する
     else; @tags = Tag.all
     end
   end
@@ -63,6 +66,7 @@ class TagsController < ApplicationController
       params.require(:tag).permit(:body, :taggable_type, :taggable_id)
     end
 
+    # クエリパラメータをクライアントから受け取り、"list"=>"manager"もしくは"list"=>"player"以外はnilとする
     def list_param
       if params.has_key?(:list) && params.has_value?("player") || params.has_value?("manager")
         params.require(:list)
