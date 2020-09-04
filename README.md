@@ -3,6 +3,8 @@
 タイトルのとおり。  
 ポリモーフィックの練習なので、バリデーションとか、NULL制約とかは何もつけてません。  
 
+- [PracticeApp - Tagpolymorphic](https://miketa-polymorphic.herokuapp.com/)
+
 ## 経緯
 
 ポリモーフィックの勉強をしていたら、Tag付けできるアプリ作ってみたらと言われたのでやってみた。  
@@ -18,7 +20,7 @@ createアクションの方法論で悩んだので、考えたことを自分�
 
 - [【自分用メモ】ポリモーフィックな関連付けをして、フォームを作成する場合の方法論 \- Qiita](https://qiita.com/miketa_webprgr/items/f9d536f8265ca52b5092)
 
-仲間内で勉強会を開催することになった。３人も聴いてくれることに！  
+仲間内で勉強会を開催することになった。４人も聴いてくれることに！  
 話ができるようにノートを作っていたら、長くなった。  
 
 - [勉強会用の資料](https://github.com/miketa-webprgr/TIL/blob/master/99_etc/20200902_polymorphoric_explanation.md)
